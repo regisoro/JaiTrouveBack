@@ -4,7 +4,7 @@ namespace JaitrouveBack.Services
 {
     public class InMemoryRepository : IRepository
     {
-        //On declare de façon privée la list des objets trouvés, tjrs mettrele type avant la variable en C#
+        //On declare de façon privée la list des objets trouvés, tjrs mettre le type avant la variable en C#
 
         private List<ObjLost> _objLost;
         public InMemoryRepository()
@@ -87,6 +87,10 @@ namespace JaitrouveBack.Services
         public List<ObjLost> GetAllObjLost()
         {
             return _objLost;
+        }
+        public ObjLost GetObjLostById(long Id)
+        {
+            return _objLost.FirstOrDefault(x => x.Id == Id);
         }
     }
 }
